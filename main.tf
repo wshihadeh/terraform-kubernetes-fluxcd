@@ -9,6 +9,10 @@ terraform {
   }
 }
 
+provider "kubernetes" {
+  config_path = var.kubeconfig_filename
+}
+
 resource "tls_private_key" "fluxcd" {
   algorithm = "RSA"
   rsa_bits  = 4096
